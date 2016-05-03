@@ -24,7 +24,7 @@ font pango:System San Francisco Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id lxterminal
+bindsym $mod+Return exec --no-startup-id xfce4-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -211,8 +211,9 @@ bindsym XF86MonBrightnessUp exec xbacklight + 5 #increase brightness
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 #Loads the wallpaper everytime I restart I3
-exec_always --no-startup-id feh --bg-scale /home/miguel/Multimedia/Pics/Wallpapers/pragueArch.jpg
+exec_always --no-startup-id feh --bg-scale /home/miguel/Pictures/Wallpapers/wallhaven-146063.jpg
 
 #Startup Programs
-exec --no-startup-id "devmon --no-gui"
-exec --no-startup-id "pulseaudio --start"
+#exec --no-startup-id nm-applet
+#exec --no-startup-id "devmon --no-gui"
+#exec --no-startup-id "pulseaudio --start"
