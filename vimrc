@@ -5,8 +5,9 @@ set showmatch
 set showcmd
 set nocompatible
 execute pathogen#infect()
+colorscheme elflord
+highlight LineNr ctermfg=red
 set clipboard=unnamedplus
-colorscheme koehler
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 inoremap jk <ESC>
 inoremap kj <ESC>

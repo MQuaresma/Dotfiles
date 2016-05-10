@@ -18,13 +18,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:System San Francisco Display 10
+font pango:System San Francisco Display 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id xfce4-terminal
+bindsym $mod+Return exec --no-startup-id lxterminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -38,7 +38,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 
 #Take screenshots
-bindsym Print exec scrot -e 'mv $f /home/miguel/Multimedia/Imagens/Screenshots/'
+bindsym Print exec scrot -e 'mv $f /home/migue/Pictures/Screenshots/'
 
 # change focus
 bindsym $mod+h focus left
@@ -116,7 +116,6 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 
-#assign [class = "Code"] $workspace2
 assign [class = "Subl3"] $workspace2
 assign [class = "Firefox"] $workspace3
 assign [class = "google-chrome"] $workspace3
@@ -124,7 +123,7 @@ assign [class = "Zathura"] $workspace8
 assign [class = "Wps"] $workspace8
 assign [class = "et"] $workspace8
 assign [class = "Wpp"] $workspace8
-assign [class = "Skype"] $workspace9
+#assign [class = "Skype"] $workspace9
 assign [class = "Slack"] $workspace9
 assign [class = "Thunderbird"] $workspace9
 for_window [class="Spotify"] move to workspace $workspace10
@@ -166,8 +165,9 @@ mode "resize" {
 
 bindsym $mod+Shift+r mode "resize"
 
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
+##2f343f
+set $bg-color            #000000
+set $inactive-bg-color   #000000
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
@@ -211,9 +211,8 @@ bindsym XF86MonBrightnessUp exec xbacklight + 5 #increase brightness
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 #Loads the wallpaper everytime I restart I3
-exec_always --no-startup-id feh --bg-scale /home/miguel/Pictures/Wallpapers/wallhaven-146063.jpg
+exec_always --no-startup-id feh --bg-scale /home/miguel/Pictures/Wallpapers/anonymous2.jpg
 
 #Startup Programs
-#exec --no-startup-id nm-applet
-#exec --no-startup-id "devmon --no-gui"
-#exec --no-startup-id "pulseaudio --start"
+exec --no-startup-id "devmon --no-gui"
+exec --no-startup-id "pulseaudio --start"
