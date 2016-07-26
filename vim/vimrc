@@ -1,0 +1,94 @@
+"Plugin Manager
+execute pathogen#infect()
+
+"Sets runtime for scripts and docs lookup
+set runtimepath^=~/.vim/bundle/
+
+"Map j+k k+j to go back to command mode
+inoremap jk <ESC>
+inoremap kj <ESC>
+
+
+"Lightvim status-line related config
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+\ }
+
+"Disable arrow-keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <right> <nop>
+imap <left> <nop>
+imap <up> <nop>
+imap <down> <nop>
+
+"Map Ctrl+key to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+"Map Ctrl+f to search
+map <C-f> /
+
+" Remap 0 to first non-blank character
+map 0 ^
+
+"Bottom bar
+set laststatus=2
+
+"Orientation options
+set relativenumber
+set number
+highlight LineNr ctermfg=red
+set cursorline
+
+"Treat long lines as break lines
+map j gj
+map k gk
+
+"Color related configs
+colorscheme gruvbox
+set background=dark
+syntax enable
+set t_Co=256
+
+
+"Search options
+set ignorecase  "Ignore case when searching
+set hlsearch    "Highlight searches
+set incsearch   "Instant search
+
+"Command listing
+set wildmenu
+
+"Turn most backup options off
+set nobackup
+set nowb
+set noswapfile
+
+"Use spaces instead of tabs
+set expandtab
+
+"Be smart when using tabs ;)
+set smarttab
+
+"1 tab = 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+set ai "Auto indent
+set si "Smart indent
+
+set lazyredraw
+set mat=2
+set encoding=utf-8
+set showmatch
+set nocompatible
