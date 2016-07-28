@@ -1,5 +1,21 @@
-"Plugin Manager
-execute pathogen#infect()
+"""""""""""""""Vundle plugin manager""""""""""""""" 
+set nocompatible             
+filetype off 
+
+set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'             " load Vundle
+
+"Plugin 'tpope/vim-fugitive'              " git wrapper 
+Plugin 'kien/ctrlp.vim'                   " fuzzy file search
+Plugin 'junegunn/goyo.vim'                " distraction free mode
+Plugin 'morhetz/gruvbox'                  " colorscheme 
+Plugin 'itchyny/lightline.vim'            " status-line for vim
+
+call vundle#end()            
+filetype plugin indent on    
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Sets runtime for scripts and docs lookup
 set runtimepath^=~/.vim/bundle/
@@ -19,6 +35,11 @@ let g:lightline = {
       \ 'subseparator': { 'left': '', 'right': '' }
 \ }
 
+"Goyo (distraction free mode) size config
+let g:goyo_width = 1600
+let g:goyo_height = 900
+
+
 "Disable arrow-keys
 map <up> <nop>
 map <down> <nop>
@@ -36,7 +57,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 "Map Ctrl+f to search
-map <C-f> /
+"map <C-f> /
 
 " Remap 0 to first non-blank character
 map 0 ^
@@ -45,10 +66,11 @@ map 0 ^
 set laststatus=2
 
 "Orientation options
-set relativenumber
-set number
-highlight LineNr ctermfg=red
-set cursorline
+set relativenumber              " Shows lines with numbers relative  to the current line
+set number                      " Shows line numbers
+highlight LineNr ctermfg=red    " Sets line numbers color
+set cursorline                  " Highlights the current line
+set cursorcolumn                " Highlights the current column
 
 "Treat long lines as break lines
 map j gj
@@ -57,7 +79,7 @@ map k gk
 "Color related configs
 colorscheme gruvbox
 set background=dark
-syntax enable
+syntax enable                   " Enable syntax highlighting
 set t_Co=256
 
 
@@ -87,7 +109,8 @@ set tabstop=4
 set ai "Auto indent
 set si "Smart indent
 
-set lazyredraw
+set lazyredraw "Keeps vim from redrawing the window so often
+
 set mat=2
 set encoding=utf-8
 set showmatch
