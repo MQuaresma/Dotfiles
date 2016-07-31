@@ -85,7 +85,7 @@ set t_Co=256
 
 "Search options
 set ignorecase  "Ignore case when searching
-set hlsearch    "Highlight searches
+"set hlsearch    "Highlight searches
 set incsearch   "Instant search
 
 "Command listing
