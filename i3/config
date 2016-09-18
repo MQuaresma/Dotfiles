@@ -95,7 +95,6 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 
 assign [class = "Code"] $workspace2
-assign [class = "Subl3"] $workspace2
 assign [class = "Firefox"] $workspace3
 assign [class = "google-chrome"] $workspace3
 #assign [class = "ft-bootstrap-Bootstrap"] $workspace4
@@ -113,8 +112,9 @@ for_window [class="Spotify"] move to workspace $workspace10
 for_window [class="^.*"] border pixel 1 
 
 #gaps
-#gaps inner 2
-#gaps outer 2
+smart_gaps on
+gaps inner 3
+gaps outer 3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -174,8 +174,8 @@ bar {
                 separator #757575
                 #                  border             background         text
                 focused_workspace  $bg-color          $bg-color          $text-color
-                inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+                inactive_workspace $bg-color          $bg-color          $inactive-text-color
+                urgent_workspace   $urgent-bg-color          $urgent-bg-color   $text-color
         }
 	position top
 }
@@ -195,7 +195,7 @@ bindsym XF86MonBrightnessUp exec light -A 5     #increase brightness
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 #Loads the wallpaper 
-exec_always --no-startup-id feh --bg-scale /home/miguel/Pictures/Wallpapers/alpen_2.jpg
+exec_always --no-startup-id feh --bg-scale /home/miguel/Pictures/Wallpapers/alpen_1.jpg
 
 #Startup Programs
 exec --no-startup-id "devmon --no-gui"

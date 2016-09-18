@@ -8,15 +8,12 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'             " load Vundle
 
-Plugin 'xolox/vim-misc'                   " Dependencie for vim-notes
 Plugin 'tpope/vim-fugitive'               " git wrapper 
 Plugin 'kien/ctrlp.vim'                   " fuzzy file search
 Plugin 'junegunn/goyo.vim'                " distraction free mode
-Plugin 'morhetz/gruvbox'                  " colorscheme 
 Plugin 'vim-airline/vim-airline'          " status-line for vim
 Plugin 'scrooloose/nerdtree'              " file explorer integration for vim
-Plugin 'xolox/vim-notes'                  " Note taking enable, similar to org-mode in spacemacs/emacs
-Plugin 'chriskempson/base16-vim'           " Gotham colorscheme 
+Plugin 'whatyouhide/vim-gotham'           " Gotham colorscheme 
 
 call vundle#end()            
 filetype plugin indent on    
@@ -25,22 +22,9 @@ filetype plugin indent on
 "Sets runtime for scripts and docs lookup
 set runtimepath^=~/.config/nvim/bundle
 
-" Access colors present in 256 colorspace
-let base16colorspace=256  
-
 "Map j+k k+j to go back to command mode
 inoremap jk <ESC>
 inoremap kj <ESC>
-
-"Lightvim status-line related config
-let g:lightline = {
-      \ 'colorscheme': 'base16',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-\ }
 
 let g:airline_powerline_fonts = 1
 "Auto Start NERDTree with vim
@@ -50,12 +34,12 @@ let g:airline_powerline_fonts = 1
 "Bind NERDTree toogle to <C-o>
 map <C-o> :NERDTreeToggle<CR>
 
+"Bind noh to <C-n>
+map <C-n> :noh<CR>
+
 "Goyo (distraction free mode) size config
 let g:goyo_width = 1600
 let g:goyo_height = 900
-
-"Note dir
-let g:notes_directories = ['~/College/Yr_2']
 
 "Disable arrow-keys
 map <up> <nop>
@@ -94,7 +78,7 @@ map j gj
 map k gk
 
 "Color related configs
-colorscheme base16-default-dark
+colorscheme gotham256
 set background=dark
 syntax enable                   " Enable syntax highlighting
 set t_Co=256

@@ -2,43 +2,44 @@
 set nocompatible             
 filetype off 
 
-set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
+set rtp+=~/.config/nvim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
 call vundle#begin()
+
 
 Plugin 'VundleVim/Vundle.vim'             " load Vundle
 
-"Plugin 'tpope/vim-fugitive'              " git wrapper 
+Plugin 'tpope/vim-fugitive'               " git wrapper 
 Plugin 'kien/ctrlp.vim'                   " fuzzy file search
 Plugin 'junegunn/goyo.vim'                " distraction free mode
-Plugin 'morhetz/gruvbox'                  " colorscheme 
-Plugin 'itchyny/lightline.vim'            " status-line for vim
+Plugin 'vim-airline/vim-airline'          " status-line for vim
+Plugin 'scrooloose/nerdtree'              " file explorer integration for vim
+Plugin 'whatyouhide/vim-gotham'           " Gotham colorscheme 
 
 call vundle#end()            
 filetype plugin indent on    
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Sets runtime for scripts and docs lookup
-set runtimepath^=~/.vim/bundle/
+set runtimepath^=~/.config/nvim/bundle
 
 "Map j+k k+j to go back to command mode
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+let g:airline_powerline_fonts = 1
+"Auto Start NERDTree with vim
+"autocmd vimenter * NERDTree
+"autocmd vimenter * vertical resize -15
 
-"Lightvim status-line related config
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-\ }
+"Bind NERDTree toogle to <C-o>
+map <C-o> :NERDTreeToggle<CR>
+
+"Bind noh to <C-n>
+map <C-n> :noh<CR>
 
 "Goyo (distraction free mode) size config
 let g:goyo_width = 1600
 let g:goyo_height = 900
-
 
 "Disable arrow-keys
 map <up> <nop>
@@ -77,7 +78,7 @@ map j gj
 map k gk
 
 "Color related configs
-colorscheme gruvbox
+colorscheme gotham256
 set background=dark
 syntax enable                   " Enable syntax highlighting
 set t_Co=256
