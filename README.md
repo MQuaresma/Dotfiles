@@ -1,2 +1,2 @@
 # DotFiles
-My Vim and i3WM config files
+My Neovim, i3 and VSCode config files
