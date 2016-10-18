@@ -78,7 +78,7 @@ map j gj
 map k gk
 
 "Color related configs
-colorscheme gotham256
+colorscheme gotham
 set background=dark
 syntax enable                   " Enable syntax highlighting
 set t_Co=256

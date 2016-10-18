@@ -116,6 +116,7 @@ smart_gaps on
 gaps inner 3
 gaps outer 3
 
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -181,7 +182,7 @@ bar {
 }
 
 #lock & blur
-bindsym $mod+shift+x exec i3lock -f 
+bindsym $mod+shift+x exec i3lock-fancy
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1  +5%  #increase volume
@@ -195,9 +196,8 @@ bindsym XF86MonBrightnessUp exec light -A 5     #increase brightness
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 #Loads the wallpaper 
-exec_always --no-startup-id feh --bg-scale /home/miguel/Pictures/Wallpapers/alpen_1.jpg
+exec_always --no-startup-id feh --bg-scale /home/miguel/Pictures/Wallpapers/YiYeTgl.png
 
 #Startup Programs
 exec --no-startup-id "devmon --no-gui"
 exec --no-startup-id "pulseaudio --start"
-exec --no-startup-id "mpd"

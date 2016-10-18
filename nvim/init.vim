@@ -11,7 +11,7 @@ Plugin 'VundleVim/Vundle.vim'             " load Vundle
 Plugin 'tpope/vim-fugitive'               " git wrapper 
 Plugin 'kien/ctrlp.vim'                   " fuzzy file search
 Plugin 'junegunn/goyo.vim'                " distraction free mode
-Plugin 'vim-airline/vim-airline'          " status-line for vim
+Plugin 'itchyny/lightline.vim'            " status-line for vim
 Plugin 'scrooloose/nerdtree'              " file explorer integration for vim
 Plugin 'whatyouhide/vim-gotham'           " Gotham colorscheme 
 
@@ -26,7 +26,16 @@ set runtimepath^=~/.config/nvim/bundle
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-let g:airline_powerline_fonts = 1
+let g:lightline = {
+      \ 'colorscheme': 'gotham',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+\ }
+
+
 "Auto Start NERDTree with vim
 "autocmd vimenter * NERDTree
 "autocmd vimenter * vertical resize -15
@@ -36,6 +45,10 @@ map <C-o> :NERDTreeToggle<CR>
 
 "Bind noh to <C-n>
 map <C-n> :noh<CR>
+
+"Bind resize keys
+map <C-up> :vertical resize +5<CR>
+map <C-down> :vertical resize -5<CR>
 
 "Goyo (distraction free mode) size config
 let g:goyo_width = 1600
@@ -78,7 +91,7 @@ map j gj
 map k gk
 
 "Color related configs
-colorscheme gotham256
+colorscheme gotham
 set background=dark
 syntax enable                   " Enable syntax highlighting
 set t_Co=256
