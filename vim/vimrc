@@ -1,46 +1,26 @@
-"""""""""""""""Vundle plugin manager""""""""""""""" 
-set nocompatible             
-filetype off 
+"""""""""""""""Plugin manager""""""""""""""" 
+call plug#begin()
 
-set rtp+=~/.config/nvim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
-call vundle#begin()
+Plug 'ervandew/supertab'
+Plug 'jiangmiao/auto-pairs' 
+Plug 'junegunn/goyo.vim'
+Plug 'scrooloose/nerdtree'
 
-
-Plugin 'VundleVim/Vundle.vim'             " load Vundle
-
-Plugin 'tpope/vim-fugitive'               " git wrapper 
-Plugin 'kien/ctrlp.vim'                   " fuzzy file search
-Plugin 'junegunn/goyo.vim'                " distraction free mode
-Plugin 'vim-airline/vim-airline'          " status-line for vim
-Plugin 'scrooloose/nerdtree'              " file explorer integration for vim
-Plugin 'whatyouhide/vim-gotham'           " Gotham colorscheme 
-
-call vundle#end()            
+call plug#end()            
 filetype plugin indent on    
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"Sets runtime for scripts and docs lookup
-set runtimepath^=~/.config/nvim/bundle
-
+""""""""""""""""""""""""""""""""""""""""""""""""""" 
 "Map j+k k+j to go back to command mode
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-let g:airline_powerline_fonts = 1
-"Auto Start NERDTree with vim
-"autocmd vimenter * NERDTree
-"autocmd vimenter * vertical resize -15
-
-"Bind NERDTree toogle to <C-o>
+"NERDTree mapped to Ctrl-O
 map <C-o> :NERDTreeToggle<CR>
+"Close NEDTree if it's the last buffer open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
 "Bind noh to <C-n>
-map <C-n> :noh<CR>
-
-"Goyo (distraction free mode) size config
-let g:goyo_width = 1600
-let g:goyo_height = 900
-
+map <C-n> :noh<CR> 
 "Disable arrow-keys
 map <up> <nop>
 map <down> <nop>
@@ -57,36 +37,23 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-"Map Ctrl+f to search
-"map <C-f> /
-
 " Remap 0 to first non-blank character
 map 0 ^
-
-"Bottom bar
-set laststatus=2
-
-"Orientation options
-set relativenumber              " Shows lines with numbers relative  to the current line
-set number                      " Shows line numbers
-highlight LineNr ctermfg=red    " Sets line numbers color
-set cursorline                  " Highlights the current line
-set cursorcolumn                " Highlights the current column
 
 "Treat long lines as break lines
 map j gj
 map k gk
 
 "Color related configs
-colorscheme gotham
-set background=dark
 syntax enable                   " Enable syntax highlighting
-set t_Co=256
+colorscheme darkblue
+set background=dark
 
+set number
+set cursorline
 
 "Search options
 set ignorecase  "Ignore case when searching
-"set hlsearch    "Highlight searches
 set incsearch   "Instant search
 
 "Command listing
@@ -100,12 +67,17 @@ set noswapfile
 "Use spaces instead of tabs
 set expandtab
 
+"Fold idented code
+"set foldmethod=indent
+"set foldlevel=1
+
 "Be smart when using tabs ;)
 set smarttab
 
 "1 tab = 4 spaces
 set shiftwidth=4
 set tabstop=4
+
 
 set ai "Auto indent
 set si "Smart indent
