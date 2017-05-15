@@ -4,3 +4,4 @@ My .files for:
 - Termite
 - ZSH
 - vim
+- VSCode
