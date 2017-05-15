@@ -1,2 +1,6 @@
 # DotFiles
-My Neovim, i3 and VSCode config files
+My .files for: 
+- i3 
+- Termite
+- ZSH
+- vim
