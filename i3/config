@@ -18,7 +18,7 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop "dmenu -sb '#E59847' -sf '#
 focus_follows_mouse no
 
 #Take screenshots
-bindsym Print exec scrot -e 'mv $f /home/miguel/Pictures/Screenshots/'
+bindsym Print exec scrot -e 'mv $f /home/miguel/Screenshots/'
 
 # change focus
 bindsym $mod+h focus left
@@ -67,7 +67,7 @@ set $workspace3  "3:"
 set $workspace4  "4:"
 set $workspace8  "8:"
 set $workspace9  "9:"
-set $workspace10 "10:"
+set $workspace10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -102,7 +102,7 @@ assign [class = "Et"] $workspace8
 assign [class = "Wpp"] $workspace8
 assign [class = "skypeforlinux"] $workspace9
 assign [class = "discord"] $workspace9
-for_window [class="Spotify"] move to workspace $workspace10
+assign [class="Thunderbird"] $workspace10
 
 
 #No title bars
@@ -179,21 +179,32 @@ bar {
 }
 
 #lock & blur
-bindsym $mod+shift+x exec i3lock-fancy
+bindsym $mod+shift+x exec i3lock
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1  +5%  #increase volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1  -5%  #decrease volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0  +5%  #increase volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0  -5%  #decrease volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle         #mute volume
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessDown exec light -U 5   #decrease brightness
 bindsym XF86MonBrightnessUp exec light -A 5     #increase brightness
 
+# Keyboard brightness
+bindcode 237 exec "kbdlight down 5"
+bindcode 238 exec "kbdlight up 5"
+
+#Multimedia keys
+bindcode 240 XF86AudioPause exec playerctl pause
+bindcode 241 XF86AudioNext exec playerctl next
+bindcode 239 XF86AudioPrev exec playerctl previous
+
+
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 #Loads the wallpaper 
-exec_always --no-startup-id feh --bg-scale /home/miguel/wallhaven-494982.png
+exec_always --no-startup-id feh --bg-scale /home/miguel/wall.jpe
 
 #Startup Programs
 exec --no-startup-id "devmon --no-gui"
