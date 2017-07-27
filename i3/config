@@ -100,10 +100,8 @@ assign [class = "Zathura"] $workspace8
 assign [class = "Wps"] $workspace8
 assign [class = "Et"] $workspace8
 assign [class = "Wpp"] $workspace8
-assign [class = "skypeforlinux"] $workspace9
 assign [class = "discord"] $workspace9
 assign [class="Thunderbird"] $workspace10
-
 
 #No title bars
 for_window [class="^.*"] border pixel 1 
@@ -204,8 +202,7 @@ bindcode 239 XF86AudioPrev exec playerctl previous
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 #Loads the wallpaper 
-exec_always --no-startup-id feh --bg-scale /home/miguel/wall.jpe
+exec_always --no-startup-id feh --bg-scale /home/miguel/Wallpapers/Gandalf.jpg
 
 #Startup Programs
-exec --no-startup-id "devmon --no-gui"
 exec --no-startup-id "pulseaudio --start"
