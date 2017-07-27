@@ -3,7 +3,7 @@ set $mod Mod4
 
 #Font
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:Liberation Mono 13
+font pango:DejaVu Sans Mono 11
 
 #Mouse+$mod to drag floating windows
 floating_modifier $mod
