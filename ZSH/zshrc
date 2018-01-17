@@ -3,7 +3,7 @@
 export ZSH=/home/miguel/.oh-my-zsh
 
 # Set this to "random" to load a random theme each time
-ZSH_THEME="lambda"
+ZSH_THEME="gallois"
 
 # Update frequency
 export UPDATE_ZSH_DAYS=13
