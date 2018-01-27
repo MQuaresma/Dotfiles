@@ -20,20 +20,11 @@ inoremap kj <ESC>
 "Map Leader
 let mapeleader=";"
 
-"NERDTree mapped to Ctrl-O
-map <C-o> :NERDTreeToggle<CR>
-"Close NEDTree if it's the last buffer open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"Ignore/Hide certain files
-let NERDTreeIgnore=['\.class$']
-
 "Ale Autocomplete
 "As of now, only supports TypeScript
 "let g:ale_completion_enabled = 1
 nmap <silent> <C-k> :ALEPreviousWrap<CR>
 nmap <silent> <C-j> :ALENextWrap<CR>
-
-"LightLine
 
 "Bind noh to <C-n>
 map <C-n> :noh<CR> 
@@ -76,6 +67,7 @@ set incsearch   "Instant search
 
 "Command listing
 set wildmenu
+set path+=**
 
 "Vim status line
 set laststatus=2
