@@ -1,2 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Volumes/Files/Dev'
+let g:netrw_dirhist_2='/Volumes/Files/Dev/Libraries'
+let g:netrw_dirhist_3='/Volumes/Files/Dev'
+let g:netrw_dirhist_4='/Volumes/Files/Dev/Libraries'
+let g:netrw_dirhist_5='/Volumes/Files/Dev'
+let g:netrw_dirhist_6='/Volumes/Files/Dev/Protein-Folder'
+let g:netrw_dirhist_7='/Volumes/Files/Dev/Protein-Folder/src'
+let g:netrw_dirhist_8='/Volumes/Files/Scripts'

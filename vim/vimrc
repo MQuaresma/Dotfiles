@@ -1,18 +1,13 @@
 """""""""""""""Plugin manager""""""""""""""" 
 call plug#begin()
 
-Plug 'w0rp/ale'                     "syntax checking
-Plug 'scrooloose/nerdtree'          "file explorer
-Plug 'kien/ctrlp.vim'               "fuzzy finder
-Plug 'ervandew/supertab'            "tab completion
-Plug 'jiangmiao/auto-pairs'         "open and close parenthesis automaticaly
-Plug 'junegunn/goyo.vim'            "distraction free mode
-Plug 'NLKNguyen/papercolor-theme'   "high contrast, dark colorscheme
-Plug 'itchyny/lightline.vim'        "lightweight status line
-Plug 'tpope/vim-fugitive'           "git wrapper
-Plug 'maximbaz/lightline-ale'
-Plug 'neo4j-contrib/cypher-vim-syntax' "cypher syntax highlighting
-
+Plug 'w0rp/ale'                         "syntax checking
+Plug 'neo4j-contrib/cypher-vim-syntax'  "cypher syntax highlighting
+Plug 'ervandew/supertab'                "tab completion
+Plug 'jiangmiao/auto-pairs'             "open and close parenthesis automaticaly
+Plug 'junegunn/goyo.vim'                "distraction free mode
+Plug 'tomasiser/vim-code-dark'          "VSCode like colorscheme for vim
+Plug 'itchyny/lightline.vim'            "lightweight status line
 
 
 call plug#end()            
@@ -68,7 +63,8 @@ map k gk
 "Color related configs
 syntax enable                   " Enable syntax highlighting
 set background=dark
-colorscheme PaperColor
+set t_Co=256
+colorscheme codedark
 
 set number
 set relativenumber

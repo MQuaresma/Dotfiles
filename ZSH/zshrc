@@ -1,15 +1,18 @@
-#export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/platform-tools:/usr/local/mongodb/bin:/usr/local/neo4j/bin:/usr/local/texlive/2017/bin/x86_64-darwin:$PATH
 
-export ZSH=/home/miguel/.oh-my-zsh
+export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
+
+export ZSH=~/.oh-my-zsh
 
 # Set this to "random" to load a random theme each time
 ZSH_THEME="gallois"
 
 # Update frequency
-export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=7
 
 # Enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
@@ -21,15 +24,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='vim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Homebrew Security
+HOMEBREW_NO_INSECURE_REDIRECT=1
+HOMEBREW_CASK_OPTS=--require-sha
+HOMEBREW_NO_ANALYTICS=1
