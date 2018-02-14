@@ -1,4 +1,5 @@
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/platform-tools:/usr/local/mongodb/bin:/usr/local/neo4j/bin:/usr/local/texlive/2017/bin/x86_64-darwin:$PATH
+# Environment variables
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/platform-tools:/usr/local/mongodb/bin:/usr/local/neo4j/bin:/usr/local/texlive/2017/bin/x86_64-darwin:/usr/local/nasm-2.10:/usr/local/sicstus4.3.0/bin:$PATH
 
 export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
@@ -16,8 +17,6 @@ ENABLE_CORRECTION="true"
 
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Plugins dir: ~/.oh-my-zsh/plugins/*
-# Custom plugins: ~/.oh-my-zsh/custom/plugins/
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh

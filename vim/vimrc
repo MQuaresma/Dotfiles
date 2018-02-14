@@ -4,11 +4,13 @@ call plug#begin()
 Plug 'w0rp/ale'                         "syntax checking
 Plug 'neo4j-contrib/cypher-vim-syntax'  "cypher syntax highlighting
 Plug 'ervandew/supertab'                "tab completion
+Plug 'kien/ctrlp.vim'                   "fuzzy file finder
 Plug 'jiangmiao/auto-pairs'             "open and close parenthesis automaticaly
 Plug 'junegunn/goyo.vim'                "distraction free mode
 Plug 'tomasiser/vim-code-dark'          "VSCode like colorscheme for vim
 Plug 'itchyny/lightline.vim'            "lightweight status line
-
+Plug 'udalov/kotlin-vim'                "kotlin syntax highlighting 
+Plug 'pangloss/vim-javascript'          "javascript improved syntax highlighting
 
 call plug#end()            
 filetype plugin indent on    
@@ -17,17 +19,14 @@ filetype plugin indent on
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-"Map Leader
-let mapeleader=";"
-
 "Ale Autocomplete
-"As of now, only supports TypeScript
-"let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 1
 nmap <silent> <C-k> :ALEPreviousWrap<CR>
 nmap <silent> <C-j> :ALENextWrap<CR>
 
 "Bind noh to <C-n>
 map <C-n> :noh<CR> 
+
 "Disable arrow-keys
 map <up> <nop>
 map <down> <nop>
@@ -51,15 +50,20 @@ map 0 ^
 map j gj
 map k gk
 
+" Keep selection after index
+vnoremap < <gv
+vnoremap > >gv
+
 "Color related configs
 syntax enable                   " Enable syntax highlighting
 set background=dark
 set t_Co=256
 colorscheme codedark
-
 set number
 set relativenumber
 set cursorline
+set scrolloff=5
+set shortmess+=aAIsT            " disable welcome screen
 
 "Search options
 set ignorecase  "Ignore case when searching
@@ -71,6 +75,9 @@ set path+=**
 
 "Vim status line
 set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 "set statusline=%F%m%=\ %y\ %L\ %m
 
 "Turn most backup options off
@@ -78,8 +85,13 @@ set nobackup
 set nowb
 set noswapfile
 
+"Update file when modified outside of vim
+set autoread
+
 "Use spaces instead of tabs
 set expandtab
+
+set ttyfast
 
 "Fold idented code
 "set foldmethod=indent
