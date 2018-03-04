@@ -7,7 +7,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
 export ZSH=~/.oh-my-zsh
 
 # Set this to "random" to load a random theme each time
-ZSH_THEME="gallois"
+ZSH_THEME="arrow"
 
 # Update frequency
 export UPDATE_ZSH_DAYS=7
@@ -30,3 +30,6 @@ source $ZSH/oh-my-zsh.sh
 HOMEBREW_NO_INSECURE_REDIRECT=1
 HOMEBREW_CASK_OPTS=--require-sha
 HOMEBREW_NO_ANALYTICS=1
+
+#ALiases
+alias ls="ls -lhc"
