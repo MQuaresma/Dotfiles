@@ -1,13 +1,12 @@
 # Environment variables
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/platform-tools:/usr/local/texlive/2017/bin/x86_64-darwin:/usr/local/sicstus4.3.0/bin:$PATH
-
-export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sicstus4.3.0/bin:$PATH
 
 export ZSH=~/.oh-my-zsh
 
+export EDITOR=vim
+
 # Set this to "random" to load a random theme each time
-ZSH_THEME="arrow"
+ZSH_THEME="powernex"
 
 # Update frequency
 export UPDATE_ZSH_DAYS=7
@@ -23,13 +22,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# ssh
+# ssh-agent autostart
+eval "$(<~/.ssh-agent-config)" >> /dev/null
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Homebrew Security
-HOMEBREW_NO_INSECURE_REDIRECT=1
-HOMEBREW_CASK_OPTS=--require-sha
-HOMEBREW_NO_ANALYTICS=1
-
-#ALiases
-alias ls="ls -lhc"
+#Aliases
+alias sicstus="rlwrap sicstus"
