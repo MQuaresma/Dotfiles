@@ -145,8 +145,8 @@ def_key "B"
 #def_key "P"
 #  toggle_display_mode
 
-#def_key "ctrl-l"
-#  toggle_screen_lock
+def_key "ctrl-l"
+  toggle_screen_lock
 
 #def_key "delete"
 #  delete_browser_items

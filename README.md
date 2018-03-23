@@ -1,6 +1,7 @@
 # DotFiles
-My .files for: 
-- i3 
+.files for: 
+- i3-gaps
 - Termite
 - ZSH
 - vim
+- Xorg

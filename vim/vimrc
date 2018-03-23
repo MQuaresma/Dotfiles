@@ -1,10 +1,14 @@
-"""""""""""""""Plugin manager""""""""""""""" 
+""""""""""""""Plugin manager""""""""""""""" 
 call plug#begin()
 
-Plug 'ervandew/supertab'
-Plug 'joshdick/onedark.vim'
-Plug 'jiangmiao/auto-pairs' 
-Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'                         "syntax checking
+Plug 'neo4j-contrib/cypher-vim-syntax'  "cypher syntax highlighting
+Plug 'ervandew/supertab'                "tab completion
+Plug 'kien/ctrlp.vim'                   "fuzzy file finder
+Plug 'jiangmiao/auto-pairs'             "open and close parenthesis automaticaly
+Plug 'tomasiser/vim-code-dark'          "VSCode like colorscheme for vim
+Plug 'udalov/kotlin-vim'                "kotlin syntax highlighting 
+Plug 'pangloss/vim-javascript'          "javascript improved syntax highlighting
 
 call plug#end()            
 filetype plugin indent on    
@@ -13,14 +17,22 @@ filetype plugin indent on
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-"NERDTree mapped to Ctrl-O
-map <C-o> :NERDTreeToggle<CR>
-"Close NEDTree if it's the last buffer open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
+"Ale Autocomplete
+let g:ale_completion_enabled = 1
+nmap <silent> <C-k> :ALEPreviousWrap<CR>
+nmap <silent> <C-j> :ALENextWrap<CR>
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'c': ['gcc'],
+\   'java': ['javac'],
+\   'awk' : ['gawk'],
+\   'd' : ['dmd'],
+\   'cmakelint' : ['cmakelint']
+\}
 
 "Bind noh to <C-n>
 map <C-n> :noh<CR> 
+
 "Disable arrow-keys
 map <up> <nop>
 map <down> <nop>
@@ -44,14 +56,16 @@ map 0 ^
 map j gj
 map k gk
 
+" Keep selection after index
+vnoremap < <gv
+vnoremap > >gv
+
 "Color related configs
 syntax enable                   " Enable syntax highlighting
-colorscheme onedark
-set background=dark
-
+" set background=dark
 set number
 set relativenumber
-set cursorline
+set shortmess+=aAIsT            " disable welcome screen
 
 "Search options
 set ignorecase  "Ignore case when searching
@@ -60,17 +74,18 @@ set incsearch   "Instant search
 "Command listing
 set wildmenu
 
-"Vim status line
-set laststatus=2
-set statusline=%F%m%=\ %y\ %L\ %m
-
 "Turn most backup options off
 set nobackup
 set nowb
 set noswapfile
 
+"Update file when modified outside of vim
+set autoread
+
 "Use spaces instead of tabs
 set expandtab
+
+set ttyfast
 
 "Fold idented code
 "set foldmethod=indent

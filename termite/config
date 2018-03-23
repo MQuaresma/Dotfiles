@@ -1,33 +1,48 @@
-
-# Gotham color scheme
-
 [colors]
+# Base16 IR Black
+# Author: Timothée Poisot (http://timotheepoisot.fr)
 
-foreground      = #98d1ce
-foreground_bold = #98d1ce
-cursor          = #98d1ce
-background      = #0a0f14
+foreground = #98d1ce
+foreground_bold = #d9d7cc
+cursor          = #d9d7cc
+background      = #000000
 
-color0  = #0a0f14
-color8  = #10151b
+# 16 color space
 
-color1  = #c33027
-color9  = #d26939
+# Black, Gray, Silver, White
+color0  = #000000
+color8  = #6c6c66
+color7  = #b5b3aa
+color15 = #fdfbee
 
-color2  = #26a98b
-color10 = #c0c5ce
+# Red
+color1  = #ff6c60
+color9  = #ff6c60
 
-color3  = #edb54b
-color11 = #245361
+# Green
+color2  = #a8ff60
+color10 = #a8ff60
 
-color4  = #195465
-color12 = #c0c5ce
+# Yellow
+color3  = #ffffb6
+color11 = #ffffb6
 
-color5  = #4e5165
-color13 = #888ba5
+# Blue
+color4  = #96cbfe
+color12 = #96cbfe
 
-color6  = #33859d
-color14 = #599caa
+# Purple
+color5  = #ff73fd
+color13 = #ff73fd
 
-color7  = #98d1ce
-color15 = #d3ebe9
+# Teal
+color6  = #c6c5fe
+color14 = #c6c5fe
+
+# Extra colors
+color16 = #e9c062
+color17 = #b18a3d
+color18 = #242422
+color19 = #484844
+color20 = #918f88
+color21 = #d9d7cc
