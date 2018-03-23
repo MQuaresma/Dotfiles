@@ -8,5 +8,4 @@ export QT_SCALE_FACTOR=1.1
 
 systemctl --user import-environment DISPLAY
 xinput set-prop bcm5974 295 1
-[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 exec i3
