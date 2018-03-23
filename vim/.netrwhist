@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/miguel/.config/gpicview'
 let g:netrw_dirhist_2='/home/miguel/Dev/ThesaurusProcessor/src'
@@ -8,3 +9,9 @@ let g:netrw_dirhist_5='/home/miguel/College/Yr_3/CG/PraticalClasses'
 let g:netrw_dirhist_6='/home/miguel/College/Yr_3/CG/PraticalClasses/P04'
 let g:netrw_dirhist_7='/home/miguel/College/Yr_3/CG/PraticalClasses'
 let g:netrw_dirhist_8='/home/miguel/College/Yr_3/CG/PraticalClasses/P04'
+=======
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Volumes/Files/College/Yr_3/CG/PraticalClasses/P02/Code'
+let g:netrw_dirhist_2='/Volumes/Files/College/Yr_3/CG/PraticalClasses/P02'
+let g:netrw_dirhist_3='/Volumes/Files/College/Yr_3/CG/PraticalClasses/P02/Code'
+>>>>>>> FETCH_HEAD

@@ -6,7 +6,13 @@ Plug 'neo4j-contrib/cypher-vim-syntax'  "cypher syntax highlighting
 Plug 'ervandew/supertab'                "tab completion
 Plug 'kien/ctrlp.vim'                   "fuzzy file finder
 Plug 'jiangmiao/auto-pairs'             "open and close parenthesis automaticaly
+<<<<<<< HEAD
 Plug 'tomasiser/vim-code-dark'          "VSCode like colorscheme for vim
+=======
+Plug 'junegunn/goyo.vim'                "distraction free mode
+Plug 'tomasiser/vim-code-dark'          "VSCode like colorscheme for vim
+Plug 'itchyny/lightline.vim'            "lightweight status line
+>>>>>>> FETCH_HEAD
 Plug 'udalov/kotlin-vim'                "kotlin syntax highlighting 
 Plug 'pangloss/vim-javascript'          "javascript improved syntax highlighting
 
@@ -21,6 +27,7 @@ inoremap kj <ESC>
 let g:ale_completion_enabled = 1
 nmap <silent> <C-k> :ALEPreviousWrap<CR>
 nmap <silent> <C-j> :ALENextWrap<CR>
+<<<<<<< HEAD
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'c': ['gcc'],
@@ -29,6 +36,8 @@ let g:ale_linters = {
 \   'd' : ['dmd'],
 \   'cmakelint' : ['cmakelint']
 \}
+=======
+>>>>>>> FETCH_HEAD
 
 "Bind noh to <C-n>
 map <C-n> :noh<CR> 
@@ -62,9 +71,19 @@ vnoremap > >gv
 
 "Color related configs
 syntax enable                   " Enable syntax highlighting
+<<<<<<< HEAD
 " set background=dark
 set number
 set relativenumber
+=======
+set background=dark
+set t_Co=256
+colorscheme codedark
+set number
+set relativenumber
+set cursorline
+set scrolloff=5
+>>>>>>> FETCH_HEAD
 set shortmess+=aAIsT            " disable welcome screen
 
 "Search options
@@ -73,7 +92,18 @@ set incsearch   "Instant search
 
 "Command listing
 set wildmenu
+set path+=**
 
+<<<<<<< HEAD
+=======
+"Vim status line
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+"set statusline=%F%m%=\ %y\ %L\ %m
+
+>>>>>>> FETCH_HEAD
 "Turn most backup options off
 set nobackup
 set nowb
