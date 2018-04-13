@@ -88,12 +88,7 @@ bindsym $mod+Shift+0 move container to workspace 0
 
 
 assign [class = "Code"] 2
-assign [class = "Zathura"] 7
-assign [class = "Wps"] 7
-assign [class = "Et"] 7
-assign [class = "Wpp"] 7
-assign [class = "discord"] 8
-assign [class = "Hexchat"] 8
+assign [class = "discord|Hexchat"] 8
 assign [class="Thunderbird"] 9
 
 #No title bars
@@ -101,11 +96,12 @@ for_window [class="^.*"] border pixel 0
 
 #CMake 
 for_window [class="CMakeSetup"] floating enable
+for_window [class="Gnome-calculator"] floating enable
 
 #Gaps
 smart_gaps on
-gaps inner 3
-gaps outer 3
+#gaps inner 3
+#gaps outer 3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -149,7 +145,7 @@ bar {
 
 hide_edge_borders both
 
-#lock & blur
+#lock
 bindsym $mod+shift+x exec i3lock -c 000000 
 
 # Pulse Audio controls
@@ -171,7 +167,8 @@ bindcode 241 XF86AudioNext exec playerctl next
 bindcode 239 XF86AudioPrev exec playerctl previous
 
 #Wallpaper
-exec_always --no-startup-id feh --bg-scale /home/miguel/ArchWelcome.png
+exec_always --no-startup-id feh --bg-fill /home/miguel/SkyTrain.jpg
 
 #Startup Programs
 exec --no-startup-id "pulseaudio --start"
+exec --no-startup-id "nm-applet"
