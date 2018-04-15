@@ -1,0 +1,22 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.iconTheme": null,
+    "editor.cursorStyle": "block",
+    "editor.minimap.enabled": false,
+    "editor.scrollBeyondLastLine": false,
+    "extensions.ignoreRecommendations": false,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.class": true,
+        "**/._*": true,
+        "**/*.out": true,
+      }
+}

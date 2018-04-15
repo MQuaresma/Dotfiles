@@ -23,7 +23,12 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # ssh-agent autostart
-eval "$(<~/.ssh-agent-config)" >> /dev/null
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-config
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-config)" >> null
+fi
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 #Aliases
