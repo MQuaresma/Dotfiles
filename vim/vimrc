@@ -1,13 +1,8 @@
 """"""""""""""Plugin manager""""""""""""""" 
 call plug#begin()
 
-Plug 'w0rp/ale'                         "syntax checking
 Plug 'neo4j-contrib/cypher-vim-syntax'  "cypher syntax highlighting
-Plug 'ervandew/supertab'                "tab completion
 Plug 'kien/ctrlp.vim'                   "fuzzy file finder
-Plug 'jiangmiao/auto-pairs'             "open and close parenthesis automaticaly
-Plug 'tomasiser/vim-code-dark'          "VSCode like colorscheme for vim
-Plug 'udalov/kotlin-vim'                "kotlin syntax highlighting 
 Plug 'pangloss/vim-javascript'          "javascript improved syntax highlighting
 
 call plug#end()            
@@ -17,20 +12,7 @@ filetype plugin indent on
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-"Ale Autocomplete
-let g:ale_completion_enabled = 1
-nmap <silent> <C-k> :ALEPreviousWrap<CR>
-nmap <silent> <C-j> :ALENextWrap<CR>
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'c': ['gcc'],
-\   'java': ['javac'],
-\   'awk' : ['gawk'],
-\   'd' : ['dmd'],
-\   'cmakelint' : ['cmakelint']
-\}
-
-"Bind noh to <C-n>
+" Bind noh to <C-n>
 map <C-n> :noh<CR> 
 
 "Disable arrow-keys
@@ -62,10 +44,11 @@ vnoremap > >gv
 
 "Color related configs
 syntax enable                   " Enable syntax highlighting
-set background=dark
 set number
 set relativenumber
 set shortmess+=aAIsT            " disable welcome screen
+
+set laststatus=2
 
 "Search options
 set ignorecase  "Ignore case when searching
