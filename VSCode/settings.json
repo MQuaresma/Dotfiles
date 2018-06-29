@@ -18,5 +18,8 @@
         "**/*.class": true,
         "**/._*": true,
         "**/*.out": true,
-      }
+    },
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 0
 }

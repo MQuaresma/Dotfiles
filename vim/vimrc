@@ -1,8 +1,13 @@
 """"""""""""""Plugin manager""""""""""""""" 
 call plug#begin()
 
+Plug 'scrooloose/nerdtree'
+Plug 'ervandew/supertab'
+Plug 'itchyny/lightline.vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'junegunn/goyo.vim'                "distraction free mode
+Plug 'w0rp/ale'
 Plug 'neo4j-contrib/cypher-vim-syntax'  "cypher syntax highlighting
-Plug 'kien/ctrlp.vim'                   "fuzzy file finder
 Plug 'pangloss/vim-javascript'          "javascript improved syntax highlighting
 
 call plug#end()            
@@ -11,6 +16,19 @@ filetype plugin indent on
 "Map j+k k+j to go back to command mode
 inoremap jk <ESC>
 inoremap kj <ESC>
+
+"Lightline
+let g:lightline = {
+      \ 'colorscheme': 'material',
+      \ }
+
+"Bind <C-o> to NERDTree
+map <C-o> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowHidden=1
+
+"Enter distraction-free mode
+map <C-f> :Goyo 160x120<CR>
 
 " Bind noh to <C-n>
 map <C-n> :noh<CR> 
@@ -43,9 +61,9 @@ vnoremap < <gv
 vnoremap > >gv
 
 "Color related configs
+colorscheme codedark
 syntax enable                   " Enable syntax highlighting
 set number
-set relativenumber
 set shortmess+=aAIsT            " disable welcome screen
 
 set laststatus=2

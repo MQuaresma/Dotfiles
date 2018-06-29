@@ -1,9 +1,10 @@
 # Environment variables
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sicstus4.3.0/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/platform-tools/:/usr/local/sicstus4.3.0/bin:$PATH
 
 export ZSH=~/.oh-my-zsh
 
 export EDITOR=vim
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Set this to "random" to load a random theme each time
 ZSH_THEME="powernex"
