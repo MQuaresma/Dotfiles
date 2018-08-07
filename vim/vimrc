@@ -9,6 +9,7 @@ Plug 'junegunn/goyo.vim'                "distraction free mode
 Plug 'w0rp/ale'
 Plug 'neo4j-contrib/cypher-vim-syntax'  "cypher syntax highlighting
 Plug 'pangloss/vim-javascript'          "javascript improved syntax highlighting
+Plug 'leafgarland/typescript-vim'       "support for typescript
 
 call plug#end()            
 filetype plugin indent on    

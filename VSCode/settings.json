@@ -1,11 +1,11 @@
 {
     "workbench.startupEditor": "none",
-    "workbench.sideBar.location": "right",
+    "workbench.sideBar.location": "left",
     "workbench.colorTheme": "Solarized Dark",
-    "workbench.iconTheme": null,
     "editor.cursorStyle": "block",
     "editor.minimap.enabled": false,
     "editor.scrollBeyondLastLine": false,
+    "editor.scrollBeyondLastColumn": 0,
     "extensions.ignoreRecommendations": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
@@ -18,8 +18,10 @@
         "**/*.class": true,
         "**/._*": true,
         "**/*.out": true,
+        ".gradle/**": true,
     },
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "window.zoomLevel": 0
+    "debug.toolBarLocation": "floating",
+    "window.zoomLevel": -0.1
 }

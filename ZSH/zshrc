@@ -1,13 +1,15 @@
 # Environment variables
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/platform-tools/:/usr/local/sicstus4.3.0/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/platform-tools/:$PATH
 
 export ZSH=~/.oh-my-zsh
+export MANPATH=$MANPATH:/usr/local/texlive/2018/texmf-dist/doc/man
+export INFOPATH=$INFOPATH:/usr/local/texlive/2018/texmf-dist/doc/info
+export DYLD_LIBRARY_PATH=/usr/local/opt/unicorn/lib/:$DYLD_LIBRARY_PATH
 
 export EDITOR=vim
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Set this to "random" to load a random theme each time
-ZSH_THEME="powernex"
+ZSH_THEME="lambda"
 
 # Update frequency
 export UPDATE_ZSH_DAYS=7
@@ -28,9 +30,7 @@ if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-config
 fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<~/.ssh-agent-config)" >> null
+    eval "$(<~/.ssh-agent-config)" >> /dev/null
 fi
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-#Aliases
-alias sicstus="rlwrap sicstus"
+alias sudoedit="sudo -e"
