@@ -2,6 +2,7 @@
     "workbench.startupEditor": "none",
     "workbench.sideBar.location": "left",
     "workbench.colorTheme": "Solarized Dark",
+    "workbench.editor.showIcons": true,
     "editor.cursorStyle": "block",
     "editor.minimap.enabled": false,
     "editor.scrollBeyondLastLine": false,
@@ -9,6 +10,7 @@
     "extensions.ignoreRecommendations": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "files.enableTrash": false,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -23,5 +25,5 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "debug.toolBarLocation": "floating",
-    "window.zoomLevel": -0.1
+    "editor.detectIndentation": false
 }
