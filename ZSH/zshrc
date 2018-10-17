@@ -17,6 +17,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias sudoedit="sudo -e"
-alias brew_maintain="brew upgrade && brew update && brew doctor && brew cleanup && rm -rf "$(brew --cache)""
+alias brew_maintain="brew upgrade && brew update && brew doctor && brew cleanup && rm -rf ~/Library/Caches/Homebrew"
 alias py="python3"
 alias latex_clean="rm *.log *.aux *.toc"

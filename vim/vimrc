@@ -9,8 +9,10 @@ endif
 call plug#begin()
 
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'                   "fuzzy file finder
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
+Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'w0rp/ale'
@@ -34,7 +36,8 @@ map <C-o> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
 
-let g:ctrlp_working_path_mode = 'r'
+"Bind <C-p> to fzf
+map <C-p> :Files<CR>
 
 " Bind noh to <C-n>
 map <C-n> :noh<CR> 
