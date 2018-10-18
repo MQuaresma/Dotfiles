@@ -1,7 +1,5 @@
 # DotFiles
-.files for: 
-- i3-gaps
-- Termite
-- ZSH
+. files for: 
+- Z shell (ZSH)
 - vim
-- Xorg
+- VSCode
