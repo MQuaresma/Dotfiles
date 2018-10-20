@@ -3,3 +3,4 @@
 - Z shell (ZSH)
 - vim
 - VSCode
+- hosts
