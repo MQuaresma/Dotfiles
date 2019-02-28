@@ -10,15 +10,11 @@ call plug#begin()
 
 " Files
 Plug 'scrooloose/nerdtree'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
 " Tab and Brace Completion
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 " Status line
 Plug 'itchyny/lightline.vim'
-" Linter
-Plug 'w0rp/ale'
 " Syntax highlighting enhancers
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
@@ -30,9 +26,6 @@ filetype plugin indent on
 map <C-o> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
-
-"Bind <C-p> to fzf
-map <C-p> :Files<CR>
 
 "Disable arrow-keys
 map <up> <nop>
@@ -66,13 +59,15 @@ vnoremap < <gv
 vnoremap > >gv
 
 "Color related configs
-set background=dark
 syntax enable                   
 set number
 " Disable start screen
 set shortmess+=aAIsT
 set laststatus=2
 set cursorline
+" Set column ruler according to file type
+autocmd FileType tex set colorcolumn=160
+au BufNewFile,BufRead,BufReadPost *.jazz set syntax=C
 
 "Search options
 set ignorecase  "Ignore case when searching
@@ -91,14 +86,6 @@ set noswapfile
 set autoread
 
 set ttyfast
-
-" move lines up and down
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
 
 "Be smart when using tabs ;)
 set smarttab

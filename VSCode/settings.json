@@ -1,8 +1,7 @@
 {
     "workbench.startupEditor": "none",
-    "workbench.sideBar.location": "left",
-    "workbench.colorTheme": "Solarized Dark",
-    "workbench.editor.showIcons": true,
+    "workbench.sideBar.location": "right",
+    "workbench.editor.showIcons": false,
     "editor.cursorStyle": "block",
     "editor.minimap.enabled": false,
     "editor.scrollBeyondLastLine": false,
@@ -24,6 +23,13 @@
     },
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "debug.toolBarLocation": "floating",
-    "editor.detectIndentation": false
+	"debug.toolBarLocation": "floating",
+    "workbench.activityBar.visible": true,
+    "search.showLineNumbers": true,
+    "editor.detectIndentation": false,
+    "workbench.colorTheme": "Atom One Dark",
+    "window.zoomLevel": 0,
+    "files.associations": {
+        "*.jazz": "c"
+    }
 }
