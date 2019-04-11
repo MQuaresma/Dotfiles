@@ -15,9 +15,13 @@ Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 " Status line
 Plug 'itchyny/lightline.vim'
+" Colorscheme
+Plug 'whatyouhide/vim-gotham'
 " Syntax highlighting enhancers
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+" Linter
+Plug 'w0rp/ale'
 
 call plug#end()
 filetype plugin indent on
@@ -26,6 +30,9 @@ filetype plugin indent on
 map <C-o> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
+
+" Set Lightline colorscheme
+let g:lightline = { 'colorscheme': 'gotham' }
 
 "Disable arrow-keys
 map <up> <nop>
@@ -47,6 +54,8 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+map <C-p> :e!<CR>
+
 " Remap 0 to first non-blank character
 map 0 ^
 
@@ -59,6 +68,8 @@ vnoremap < <gv
 vnoremap > >gv
 
 "Color related configs
+set background=dark
+colorscheme gotham
 syntax enable                   
 set number
 " Disable start screen
@@ -68,6 +79,7 @@ set cursorline
 " Set column ruler according to file type
 autocmd FileType tex set colorcolumn=160
 au BufNewFile,BufRead,BufReadPost *.jazz set syntax=C
+au BufNewFile,BufRead,BufReadPost *.japp set syntax=C
 
 "Search options
 set ignorecase  "Ignore case when searching
