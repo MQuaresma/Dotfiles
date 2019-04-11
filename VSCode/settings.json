@@ -27,7 +27,7 @@
     "workbench.activityBar.visible": true,
     "search.showLineNumbers": true,
     "editor.detectIndentation": false,
-    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorTheme": "Solarized Dark",
     "window.zoomLevel": 0,
     "files.associations": {
         "*.jazz": "c"
