@@ -33,3 +33,4 @@ if [ "$(uname)" = "Darwin" ] ; then
     alias sudoedit="sudo -e"
     alias brew_maintain="brew update && brew upgrade && brew cask upgrade &&  brew doctor && brew cleanup && rm -rf ~/Library/Caches/Homebrew"
 fi
+zstyle ':completion:*:ssh:*' hosts off
