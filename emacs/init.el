@@ -8,7 +8,7 @@
 ;; Repositories
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("melpa", "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa". "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (package-initialize)
@@ -24,9 +24,10 @@
    (quote
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(easycrypt-prog-name "/Users/miguelq/.opam/easycrypt/bin/easycrypt")
+ '(neo-window-position (quote right))
  '(package-selected-packages
    (quote
-    (neotree spacemacs-theme dtrace-script-mode auctex-latexmk company-coq auctex proof-general))))
+    (markdown-mode neotree spacemacs-theme dtrace-script-mode auctex-latexmk company-coq auctex proof-general))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -37,6 +38,7 @@
 
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+()
 
 (load-theme 'spacemacs-dark)
 (load-file "/Users/miguelq/.opam/easycrypt/share/proofgeneral/generic/proof-site.el")
