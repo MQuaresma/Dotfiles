@@ -22,10 +22,11 @@
  '(ansi-color-names-vector
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(cua-mode t nil (cua-base))
- '(custom-enabled-themes (quote (cyberpunk)))
+ '(custom-enabled-themes (quote (gruber-darker)))
  '(custom-safe-themes
    (quote
-    ("6bc387a588201caf31151205e4e468f382ecc0b888bac98b2b525006f7cb3307" "c5ad91387427abc66af38b8d6ea74cade4e3734129cbcb0c34cc90985d06dcb3" "1068ae7acf99967cc322831589497fee6fb430490147ca12ca7dd3e38d9b552a" default)))
+    ("47ec21abaa6642fefec1b7ace282221574c2dd7ef7715c099af5629926eb4fd7" "6bc387a588201caf31151205e4e468f382ecc0b888bac98b2b525006f7cb3307" "c5ad91387427abc66af38b8d6ea74cade4e3734129cbcb0c34cc90985d06dcb3" "1068ae7acf99967cc322831589497fee6fb430490147ca12ca7dd3e38d9b552a" default)))
+ '(fci-rule-color "#383838")
  '(hl-todo-keyword-faces
    (quote
     (("TODO" . "#dc752f")
@@ -46,7 +47,7 @@
  '(neo-window-position (quote right))
  '(package-selected-packages
    (quote
-    (cyberpunk-theme org dockerfile-mode markdown-mode neotree auctex-latexmk company-coq auctex)))
+    (gruber-darker-theme cyberpunk-theme org dockerfile-mode markdown-mode neotree auctex-latexmk company-coq auctex)))
  '(pdf-view-midnight-colors (quote ("#b2b2b2" . "#292b2e"))))
 
 (custom-set-faces
