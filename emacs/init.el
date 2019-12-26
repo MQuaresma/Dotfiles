@@ -47,7 +47,7 @@
  '(neo-window-position (quote right))
  '(package-selected-packages
    (quote
-    (gruber-darker-theme cyberpunk-theme org dockerfile-mode markdown-mode neotree auctex-latexmk company-coq auctex)))
+    (yaml-mode rust-mode gruber-darker-theme cyberpunk-theme org dockerfile-mode markdown-mode neotree auctex-latexmk company-coq auctex)))
  '(pdf-view-midnight-colors (quote ("#b2b2b2" . "#292b2e"))))
 
 (custom-set-faces
@@ -57,11 +57,25 @@
  ;; If there is more than one, they won't work right.
  )
 
+
+(defun move-line-up ()
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2))
+
+(defun move-line-down ()
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1))
+
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "M-<up>") 'move-line-up)
+(global-set-key (kbd "M-<down>") 'move-line-down)
 
 ;;(load-file "/Users/miguelq/.opam/easycrypt/share/proofgeneral/generic/proof-site.el")
 
@@ -69,15 +83,17 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (cua-mode)
-(setq mac-option-modifier 'none)
+(setq mac-option-modifier 'none
+      backup-directory-alist '(("." . "~/.emacs.d/backup"))
+      TeX-PDF-mode t
+      )
 
 (setq-default
  c-default-style "linux"
  c-basic-offset 4
  tab-width 4
- indent-tabs-mode nil)
+ indent-tabs-mode nil
+ )
 
 (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.jazz\\'" . c-mode))
-
-(setq TeX-PDF-mode t)
