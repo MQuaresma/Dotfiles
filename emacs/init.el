@@ -29,19 +29,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
- '(custom-enabled-themes (quote (afternoon)))
- '(custom-safe-themes
-   (quote
-    ("2540689fd0bc5d74c4682764ff6c94057ba8061a98be5dd21116bf7bf301acfb" default)))
+ '(custom-enabled-themes (quote (deeper-blue)))
  '(frame-brackground-mode (quote dark))
  '(neo-window-position (quote right))
  '(package-selected-packages
    (quote
-    (afternoon-theme yaml-mode rust-mode org markdown-mode neotree auctex-latexmk company-coq auctex))))
+    (yaml-mode rust-mode org markdown-mode neotree auctex-latexmk company-coq auctex)))
+)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
