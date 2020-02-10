@@ -6,7 +6,7 @@
     "editor.minimap.enabled": false,
     "editor.scrollBeyondLastLine": false,
     "editor.scrollBeyondLastColumn": 0,
-    "extensions.ignoreRecommendations": false,
+    "extensions.ignoreRecommendations": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "files.enableTrash": false,
@@ -31,5 +31,6 @@
     "window.zoomLevel": 0,
     "files.associations": {
         "*.jazz": "c"
-    }
+    },
+    "editor.fontLigatures": true
 }
