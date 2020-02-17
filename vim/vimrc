@@ -1,39 +1,5 @@
-" Check if the plugin manager is installed
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-""""""""""""""Plugin manager"""""""""""""""
-call plug#begin()
-
-" Files
-Plug 'scrooloose/nerdtree'
-" Tab and Brace Completion
-Plug 'ervandew/supertab'
-Plug 'jiangmiao/auto-pairs'
-" Status line
-Plug 'itchyny/lightline.vim'
-" Colorscheme
-Plug 'whatyouhide/vim-gotham'
-" Syntax highlighting enhancers
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-" Linter
-Plug 'w0rp/ale'
-
-call plug#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""
-"Bind <C-o> to NERDTree
-map <C-o> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeShowHidden=1
-
-" Set Lightline colorscheme
-let g:lightline = { 'colorscheme': 'gotham' }
-
 "Disable arrow-keys
 map <up> <nop>
 map <down> <nop>
@@ -69,7 +35,6 @@ vnoremap > >gv
 
 "Color related configs
 set background=dark
-colorscheme gotham
 syntax enable                   
 set number
 " Disable start screen
