@@ -3,9 +3,9 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa". "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (package-initialize)
+
+(load-file "~/.emacs.d/elpa/proof-general-20210213.1907/generic/proof-site.el")
 
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
@@ -29,13 +29,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (deeper-blue)))
- '(frame-brackground-mode (quote dark))
- '(neo-window-position (quote right))
+ '(coq-prog-name "/Users/miguelq/.opam/jasmin/bin/coqtop")
+ '(easycrypt-prog-name "/Users/miguelq/.opam/jasmin/bin/easycrypt")
+ '(custom-enabled-themes '(deeper-blue))
+ '(frame-brackground-mode 'dark)
  '(package-selected-packages
-   (quote
-    (yaml-mode rust-mode org markdown-mode neotree auctex-latexmk company-coq auctex)))
-)
+   '(company-coq company-math proof-general auctex rust-mode markdown-mode auctex-latexmk))
+ '(proof-three-window-enable t)
+ '(ring-bell-function 'ignore))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -44,11 +45,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(add-to-list 'load-path "~/.emacs.d/elpa/neotree-20181121.2026")
-
-;;(load-file "~/.opam/easycrypt/share/proofgeneral/generic/proof-site.el")
 
 (cua-mode)
 (setq mac-option-modifier 'none
@@ -64,11 +60,14 @@
 
 (setq-default
  c-default-style "linux"
- c-basic-offset 4
- tab-width 4
+ c-basic-offset 2
+ tab-width 2
  indent-tabs-mode nil
  )
 
 ;; Additional file types
 (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.jazz\\'" . c-mode))
+(add-to-list 'auto-mode-alist '("\\.jahh\\'" . c-mode))
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/texlive/2019/bin/x86_64-darwin/"))  
+(setq exec-path (append exec-path '("/usr/local/texlive/2019/bin/x86_64-darwin/")))
