@@ -30,7 +30,8 @@
     "workbench.colorTheme": "Solarized Dark",
     "window.zoomLevel": 0,
     "files.associations": {
-        "*.jazz": "c"
+        "*.jazz": "c",
+        "*.jahh": "c"
     },
     "editor.fontLigatures": true
 }

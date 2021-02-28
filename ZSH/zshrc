@@ -1,20 +1,23 @@
 # Environment variables
-export PATH=$PATH:/local/bin:/usr/local/sbin:/usr/local/texlive/2019/bin/x86_64-darwin
+export PATH=$PATH:/local/bin:/usr/local/sbin:/usr/local/texlive/2019/bin/x86_64-darwin:/Users/miguelq/Library/Python/3.8/bin
 export MANPATH=$MANPATH:/usr/local/texlive/2019/texmf-dist/doc/man
 export INFOPATH=$INFOPATH:/usr/local/texlive/2019/texmf-dist/doc/info
 export EDITOR=vim
 export GPG_TTY=$(tty)
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig":"/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 # opam configuration
-test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+test -r /Users/miguelq/.opam/opam-init/init.zsh && . /Users/miguelq/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # Aliases
 alias py="python3"
-alias latex_clean="rm -f *.log *.aux *.toc"
+alias latex_clean="rm -rf *.out *.log *.aux *.toc"
+alias l="l -G"
+alias ll="l -lG"
 
 # set macOS specific ENV VARS
 if [ "$(uname)" = "Darwin" ] ; then
     export DYLD_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/usr/local/opt/libomp/include:/usr/local/opt/unicorn/lib/:$DYLD_LIBRARY_PATH
     alias sudoedit="sudo -e"
-    alias brew_maintain="brew update && brew upgrade && brew cask upgrade &&  brew doctor && brew cleanup && rm -rf ~/Library/Caches/Homebrew"
+    alias brew_maintain="brew update && brew upgrade && brew upgrade --cask &&  brew doctor && brew cleanup && rm -rf ~/Library/Caches/Homebrew"
 fi
