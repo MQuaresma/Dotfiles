@@ -1,5 +1,5 @@
 filetype plugin indent on
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "Disable arrow-keys
 map <up> <nop>
 map <down> <nop>
@@ -34,15 +34,13 @@ vnoremap < <gv
 vnoremap > >gv
 
 "Color related configs
-set background=dark
 syntax enable                   
 set number
 " Disable start screen
 set shortmess+=aAIsT
-set laststatus=2
 set cursorline
 " Set column ruler according to file type
-autocmd FileType tex set colorcolumn=160
+set colorcolumn=100
 au BufNewFile,BufRead,BufReadPost *.jazz set syntax=C
 au BufNewFile,BufRead,BufReadPost *.japp set syntax=C
 
@@ -59,26 +57,22 @@ set nobackup
 set nowb
 set noswapfile
 
-"Update file when modified outside of vim
-set autoread
-
 set ttyfast
 
-"Be smart when using tabs ;)
 set smarttab
 
-"1 tab = 4 spaces
-set shiftwidth=4
-set tabstop=4
+"1 tab = 2 spaces
+set shiftwidth=2
+set tabstop=2
 set expandtab " tab to spaces
-
 
 set ai "Auto indent
 set si "Smart indent
 
-set lazyredraw "Keeps vim from redrawing the window so often
+set lazyredraw
 
 set mat=2
 set encoding=utf-8
 set showmatch
 set nocompatible
+set mouse=a
