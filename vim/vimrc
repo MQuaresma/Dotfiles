@@ -41,8 +41,9 @@ set shortmess+=aAIsT
 set cursorline
 " Set column ruler according to file type
 set colorcolumn=100
-au BufNewFile,BufRead,BufReadPost *.jazz set syntax=C
-au BufNewFile,BufRead,BufReadPost *.japp set syntax=C
+au BufNewFile,BufRead *.jazz set filetype=c
+au BufNewFile,BufRead *.japp set filetype=c
+au BufNewFile,BufRead *.jahh set filetype=c
 
 "Search options
 set ignorecase  "Ignore case when searching

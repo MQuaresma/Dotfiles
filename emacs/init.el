@@ -2,10 +2,8 @@
 ;; Repositories
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("melpa". "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
-
-(load-file "~/.emacs.d/elpa/proof-general-20210213.1907/generic/proof-site.el")
 
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
@@ -29,13 +27,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(coq-prog-name "/Users/miguelq/.opam/jasmin/bin/coqtop")
- '(easycrypt-prog-name "/Users/miguelq/.opam/jasmin/bin/easycrypt")
+ '(coq-prog-name
+   "/nix/store/nj7rpjs3hivz8cxx7ql2i8sfwxy9g6rg-coq-8.9.1/bin/coqtop")
  '(custom-enabled-themes '(deeper-blue))
+ '(easycrypt-prog-name "~/.opam/easycrypt/bin/easycrypt")
+ '(easycrypt-script-indent nil)
  '(frame-brackground-mode 'dark)
  '(package-selected-packages
-   '(company-coq company-math proof-general auctex rust-mode markdown-mode auctex-latexmk))
- '(proof-three-window-enable t)
+   '(markdown-mode proof-general company-coq company-math auctex rust-mode auctex-latexmk))
+ '(proof-three-window-enable nil)
  '(ring-bell-function 'ignore))
 
 (custom-set-faces
@@ -44,7 +44,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
+(when (eq window-system 'ns)
+  (setq exec-path
+        (append
+         '("/Users/miguelquaresma/.opam/easycrypt/bin")
+         exec-path))
+  (setenv "PATH"
+          (concat
+           "/Users/miguelquaresma/.opam/easycrypt/bin:/usr/local/bin/:"
+           (getenv "PATH"))))
 
 (cua-mode)
 (setq mac-option-modifier 'none
@@ -71,3 +79,5 @@
 (add-to-list 'auto-mode-alist '("\\.jahh\\'" . c-mode))
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/texlive/2019/bin/x86_64-darwin/"))  
 (setq exec-path (append exec-path '("/usr/local/texlive/2019/bin/x86_64-darwin/")))
+
+(setq tramp-default-method "ssh")
