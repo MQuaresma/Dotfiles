@@ -1,0 +1,58 @@
+# Environment variables
+export PATH=$PATH:/usr/local/sbin:/Users/miguelquaresma/Documents/tools/jasmin-internal/jpp:/usr/local/texlive/2024/bin/universal-darwin:/usr/local/opt/m4/bin
+# export PATH=$PATH:/usr/local/sbin:$HOME/.local/share/gem/ruby/3.1.0/bin:/Users/miguelquaresma/Documents/tools/jasmin-internal/jpp:/usr/local/texlive/2024/bin/universal-darwin:/usr/local/opt/m4/bin
+export EDITOR=vim
+export GPG_TTY=$(tty)
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig":"/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export SDKROOT=$(xcrun --show-sdk-path)
+#
+# opam configuration
+[[ ! -r /Users/miguelquaresma/.opam/opam-init/init.zsh ]] || source /Users/miguelquaresma/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+eval $(opam env)
+
+source "$HOME/.cargo/env"
+
+# Aliases
+alias py="python3"
+alias latex_clean="rm -rf *.out *.log *.aux *.toc"
+alias l="ls -G"
+alias grep="grep --color"
+alias ll="ls -laG"
+alias la="ls -a"
+
+# set macOS specific ENV VARS
+if [ "$(uname)" = "Darwin" ] ; then
+    alias sudoedit="sudo -e"
+    alias brew_maintain="brew update && brew upgrade && brew upgrade --cask &&  brew cleanup && brew autoremove && rm -rf $(brew --cache) && brew doctor"
+fi
+
+# GHC
+[ -f "/Users/miguelquaresma/.ghcup/env" ] && source "/Users/miguelquaresma/.ghcup/env" # ghcup-env
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+
+PATH="/Users/miguelquaresma/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/miguelquaresma/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/miguelquaresma/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/miguelquaresma/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/miguelquaresma/perl5"; export PERL_MM_OPT;
+
+# Created by `pipx` on 2024-02-09 19:48:37
+export PATH="$PATH:/Users/miguelquaresma/.local/bin"
+
+# Created by `pipx` on 2024-02-09 19:48:38
+export PATH="$PATH:/Users/miguelquaresma/Library/Python/3.11/bin"
+
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+ eval "$(/usr/local/bin/rbenv init - zsh)"
